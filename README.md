@@ -7,7 +7,7 @@ Official implementation of Vid2Sim: Realistic and Interactive Simulation from Vi
 Vid2Sim is a novel framework that converts monocular videos into photorealistic and physically interactive simulation environments for training embodied agents with minimal sim-to-real gap.
 
 <p align="center">
-  <img src="https://metadriverse.github.io/vid2sim/static/images/teaser.gif" width="80%">
+  <img src="./assets/teaser.png" width="100%">
 </p>
 
 
