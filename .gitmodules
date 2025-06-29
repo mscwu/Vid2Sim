@@ -1,0 +1,9 @@
+[submodule "submodules/Grounded-SAM-2"]
+	path = submodules/Grounded-SAM-2
+	url = https://github.com/IDEA-Research/Grounded-SAM-2.git
+[submodule "submodules/vid2sim-rasterizer"]
+	path = submodules/vid2sim-rasterizer
+	url = https://github.com/ZiYang-xie/video2sim-rasterization
+[submodule "submodules/vid2sim-deva-segmentation"]
+	path = submodules/vid2sim-deva-segmentation
+	url = https://github.com/ZiYang-xie/vid2sim-deva-segmentation.git
