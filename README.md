@@ -14,8 +14,24 @@ Vid2Sim is a novel framework that converts monocular videos into photorealistic 
 ## Installation 🚧
 
 ```bash
-# Under Construction
-# Coming soon!
+# Clone the repository
+git clone https://github.com/Vid2Sim/Vid2Sim.git --recursive
+cd Vid2Sim
+
+# Create a new environment
+conda create -n vid2sim python=3.10
+conda activate vid2sim
+
+# Install dependencies
+pip install -r requirements.txt
+```
+
+## Data Preparation 📂
+
+- Step1: Generate dynamic masks from the video
+```bash
+# Follow the instructions in the [Grounded-SAM-2]https://github.com/IDEA-Research/Grounded-SAM-2) repository to install the segmentation model
+
 ```
 
 ## Dataset 📚

@@ -65,13 +65,3 @@ if __name__ == '__main__':
         flush_buffer(deva, result_saver)
             
     result_saver.end()
-
-
-# CUDA_VISIBLE_DEVICES=$gpu_id python tools/generate_mask_deva.py \
-# --chunk_size 4 \
-# --img_path "" \
-# --temporal_setting semionline \
-# --amp \
-# --output "" \
-# --size 720 \
-# --prompt person.pedestrian.child.adult.bag.backpack.handbag.suitcase.hat.shoes.cloth.wheelchair
