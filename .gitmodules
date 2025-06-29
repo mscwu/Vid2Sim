@@ -7,3 +7,6 @@
 [submodule "submodules/vid2sim-deva-segmentation"]
 	path = submodules/vid2sim-deva-segmentation
 	url = https://github.com/ZiYang-xie/vid2sim-deva-segmentation.git
+[submodule "submodules/simple-knn"]
+	path = submodules/simple-knn
+	url = https://gitlab.inria.fr/bkerbl/simple-knn.git

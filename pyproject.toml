@@ -42,6 +42,9 @@ dev = [
     "opencv-python>=4.5.0",
     "matplotlib>=3.3.0",
     "pillow>=8.0.0",
+    "imageio>=2.31.0",
+    "plyfile>=0.7.0",
+    
     "tqdm>=4.60.0",
 ]
 all = [

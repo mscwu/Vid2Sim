@@ -17,3 +17,4 @@ release
 visualize
 data/
 output/
+*.egg-info/

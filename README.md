@@ -26,15 +26,8 @@ conda activate vid2sim
 pip install -r requirements.txt
 ```
 
-## Data Preparation 📂
 
-- Step1: Generate dynamic masks from the video
-```bash
-# Follow the instructions in the [Grounded-SAM-2]https://github.com/IDEA-Research/Grounded-SAM-2) repository to install the segmentation model
-
-```
-
-## Dataset 📚
+## Vid2Sim Dataset 📚
 
 The Vid2Sim dataset includes 30 high-quality real-to-sim simulation environments reconstructed from video clips sourced from 9 web videos. Each clip includes 15 seconds of forward-facing video recorded at 30 fps, providing 450 frames per scene for environment reconstruction and simulation.
 
