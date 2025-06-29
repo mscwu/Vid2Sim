@@ -8,8 +8,9 @@ Vid2Sim is a novel framework that converts monocular videos into photorealistic 
 
 > [!Note]
 > This subfolder is used for agent RL training in the reconstructed simulation environment.  
-> Please follow the instructions below to build the environment and run the RL training.    
-> *For simulation environment reconstruction, please refer to the [Vid2Sim-Recon](https://github.com/Vid2Sim/Vid2Sim/src/vid2sim_recon) subfolder.*
+> Please follow the instructions below to build the environment and run the RL training.  
+>     
+> *For simulation environment reconstruction, please refer to the [Vid2Sim-Recon](https://github.com/Vid2Sim/Vid2Sim/tree/main/src/vid2sim_recon) subfolder.*
 
 
 <p align="center">
