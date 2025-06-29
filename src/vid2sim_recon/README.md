@@ -6,9 +6,10 @@
 
 Vid2Sim is a novel framework that converts monocular videos into photorealistic and physically interactive simulation environments for training embodied agents with minimal sim-to-real gap.
 
-> **Info**: This subfolder is used for reconstructing the simulation environment from the video.  
-Please follow the instructions below to prepare the data and run the simulation environment reconstruction.    
-*For RL training, please refer to the [Vid2Sim-RL](https://github.com/Vid2Sim/Vid2Sim/src/vid2sim_rl) subfolder.*
+> [!Note]
+> This subfolder is used for reconstructing the simulation environment from the video.  
+> Please follow the instructions below to prepare the data and run the simulation environment reconstruction.    
+> *For RL training, please refer to the [Vid2Sim-RL](https://github.com/Vid2Sim/Vid2Sim/src/vid2sim_rl) subfolder.*
 
 
 <p align="center">
