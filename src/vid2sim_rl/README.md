@@ -23,6 +23,18 @@ Follow the instructions in `src/vid2sim_rl/requirements.txt` to install the requ
 pip install -r requirements.txt
 ```
 
+### 📦 Code Structure
+```
+vid2sim_rl/
+├── config/ # Training configuration
+├── envs/ # Unity environments
+├── unity_envs/ # Unity environment scripts (C#)
+├── train.py # Training script
+├── infer.py # Inference script
+├── requirements.txt # Requirements
+├── ...
+```
+
 ## 🏗️ 2. RL Environment Setup (Unity Version)
 This project use Unity [ml-agents](https://github.com/Unity-Technologies/ml-agents) to convert compiled Unity environment into OpenAI [gym](https://github.com/Farama-Foundation/Gymnasium) environment to support RL training with [stable-baseline3](https://github.com/DLR-RM/stable-baselines3). For the specific implementation, you can refer to the `UnityEnvWrapper` in [env.py](env.py) file.
 

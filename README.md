@@ -65,7 +65,7 @@ Vid2Sim/
 
 The Vid2Sim dataset includes 30 high-quality real-to-sim simulation environments reconstructed from video clips sourced from 9 web videos. Each clip includes 15 seconds of forward-facing video recorded at 30 fps, providing 450 frames per scene for environment reconstruction and simulation.  
 
-We provide the source video data, reconstructed environments, and interactive Unity environments for agent training.
+We provide the source video data, reconstructed environments, and [interactive Unity environments](https://drive.google.com/drive/folders/1LCruqb6M3mCgsjaqI1ON6WVoZ-9CmQDY?usp=sharing) for agent training.
 
 <p align="center">
   <img src="./assets/dataset.png" width="100%">
