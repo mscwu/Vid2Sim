@@ -17,11 +17,10 @@ Vid2Sim is a novel framework that converts monocular videos into photorealistic 
   <img src="../../assets/teaser.png" width="100%">
 </p>
 
-## Data Preparation 📂
-*Please ensure you are in the `Vid2Sim` root directory.*
+## 1. Data Preparation 📂
 
 ### Step1: Generate dynamic masks from the video
-Follow the instructions in the [Grounded-SAM-2](https://github.com/IDEA-Research/Grounded-SAM-2) repository to install the segmentation model.
+Follow the instructions in the [Grounded-SAM-2](https://github.com/IDEA-Research/Grounded-SAM-2) or [DEVA (modified)](https://github.com/ZiYang-xie/vid2sim-deva-segmentation) repository to install the segmentation model.
 
 Convert your video into image sequences and save them in a folder `images`.
 ```
@@ -33,9 +32,12 @@ seq_path/
 ```
 Then run the following command to generate dynamic masks.
 ```bash
+cd tools/
 bash generate_mask.sh $seq_path
 ```
-The dynamic masks will be saved in the folder `masks`.
+Dynamic masks will be used to mask out foreground dynamic objects within the orginal video and help us only reconstruct a clean objectless static background as our simulation environment. The final dynamic masks will be saved in the folder `masks` under the sequence path.  
+
+We provide two models for dynamic object segmentation, we recommend using the [Grounded-SAM-2](https://github.com/IDEA-Research/Grounded-SAM-2) model for better performance. In the original paper, we use a slightly modified DEVA model for referred dynamic object segmentation.
 
 ### Step2: Run SfM to reconstruct the camera poses and point cloud prior
 
@@ -54,4 +56,39 @@ The SfM results will be saved in the folder `sparse` under the sequence path.
 ```bash
 bash generate_depth.sh $seq_path
 ```
-The depth results will be saved in the depth folder `depths` under the sequence path.
+We use monocular depth estimation to generate depth prior for the scene. These extra geometry clues will help us reconstruct the scene more accurately. The reconstructed mesh will further serve as the foundation for agent-scene interaction and collision detection in the following RL training stage. The depth results will be saved in the depth folder `depths` under the sequence path.
+
+## 2. Reconstruct the Scene 🗺️
+
+Once the video is processed with dynamic masks, camera poses, and depth priors, you can reconstruct the scene. Run the training script with the prepared data to generate a photorealistic and static 3D scene, which will serve as the base for building interactive simulation environments.
+
+```bash
+python train.py -s <SEQ_PATH> -m <RESULT_PATH>
+```
+
+## 3. Export the Scene 📦
+
+After reconstruction, export the scene mesh for agent interaction and collision detection. By default, the exported mesh excludes the floor. You can optionally apply `use_ground_mask` and `use_sky_mask` to filter out specific regions using custom masks.
+
+```bash
+python export_mesh.py -m <RESULT_PATH> --voxel-size <TSDF_VOXEL_SIZE>
+```
+
+The exported mesh should locate in `mesh` folder under the result path.
+
+## 4. Build the Simulation Environment 🌏
+Once you have the GS-reconstructed scene and its corresponding mesh, you can build a simulation environment using the hybrid scene representation.
+Refer to [BUILD_YOUR_OWN_ENV.md](../vid2sim_rl/BUILD_YOUR_OWN_ENV.md) for a quick guide on setting up your own real-to-sim environment from scratch.
+
+## Citation 📝
+
+If you find this work useful in your research, please consider citing:
+
+```bibtex
+@article{xie2024vid2sim,
+  title={Vid2Sim: Realistic and Interactive Simulation from Video for Urban Navigation},
+  author={Xie, Ziyang and Liu, Zhizheng and Peng, Zhenghao and Wu, Wayne and Zhou, Bolei},
+  journal={CVPR},
+  year={2025}
+}
+```

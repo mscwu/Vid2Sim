@@ -4,7 +4,7 @@ output
 build
 diff_rasterization/diff_rast.egg-info
 diff_rasterization/dist
-data
+data/
 tensorboard_3d
 **/__pycache__/
 events.out*
@@ -13,7 +13,6 @@ ckpt
 ckpts/
 checkpoints/
 release
-*.sh
 visualize
 data/
 output/
