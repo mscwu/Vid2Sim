@@ -9,6 +9,7 @@ tensorboard_3d
 **/__pycache__/
 events.out*
 data/
+data
 ckpt
 ckpts/
 checkpoints/
