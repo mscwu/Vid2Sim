@@ -39,7 +39,6 @@ pip install -e submodules/ml-agents
 ## 🎥 Reconstruct the simulation envs from videos
 Vid2Sim transforms monocular videos into simulation environments by reconstructing the scene geometry and appearance. The generated environments preserve real-world diversity and visual fidelity, providing minimal sim-to-real gap for agent training.
 
-![Reconstruction](./assets/recon.png)
 
 👉 To get started, follow the reconstruction guide in [vid2sim_recon](src/vid2sim_recon/README.md) to reconstruct the simulation environment from video.
 
@@ -49,16 +48,15 @@ After the environment is reconstructed, Vid2Sim translates the real-to-sim envir
 
 👉 To set up the environment and launch RL training, refer to [vid2sim_rl](src/vid2sim_rl/README.md). 
 
-![RL](./assets/rl_obs.png)
 
 ## 📦 Repository Structure
 ```
 Vid2Sim/
-├── data/ # Source video data
-├── envs/ # Reconstructed environments
+├── data/ # Source data
 ├── src/
 │   ├── vid2sim_recon/ # Reconstruct the simulation environment from video
 │   ├── vid2sim_rl/ # Train the agent in real-to-sim environments
+├── tools/ # Tools scripts
 ├── README.md # This file
 ```
 
