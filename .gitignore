@@ -18,3 +18,12 @@ visualize
 data/
 output/
 *.egg-info/
+exps/
+logs/
+outputs/
+__pycache__/
+*.pyc
+*.zip
+*.egg-info/
+*.egg
+checkpoints/

@@ -21,10 +21,8 @@ import asyncio
 import aiofiles
 import sys
 sys.path.append(str(Path(__file__).resolve().parents[1]))
-from scene.colmap_loader import read_extrinsics_binary, read_intrinsics_binary, qvec2rotmat, read_points3D_binary
-from scene.dataset_readers import storePly
-
-from utils.vis_utils import visualize_depth, visualize_normal
+from colmap_utils.loader import read_extrinsics_binary, read_intrinsics_binary, qvec2rotmat, read_points3D_binary, storePly
+from colmap_utils.utils import visualize_depth, visualize_normal
 
 def fetchPly(path):
     plydata = PlyData.read(path)
@@ -35,10 +33,8 @@ def fetchPly(path):
 def gen_ply(bin_path, ply_path):
     if os.path.exists(ply_path):
         return
-
     xyz, rgb, _ = read_points3D_binary(bin_path)
     storePly(ply_path, xyz, rgb)
-
 
 def focal2fov(focal, pixels):
     return 2*math.atan(pixels/(2*focal))

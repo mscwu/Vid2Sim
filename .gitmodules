@@ -1,12 +1,24 @@
 [submodule "submodules/Grounded-SAM-2"]
 	path = submodules/Grounded-SAM-2
 	url = https://github.com/IDEA-Research/Grounded-SAM-2.git
+
 [submodule "submodules/vid2sim-rasterizer"]
 	path = submodules/vid2sim-rasterizer
 	url = https://github.com/ZiYang-xie/video2sim-rasterization
+
 [submodule "submodules/vid2sim-deva-segmentation"]
 	path = submodules/vid2sim-deva-segmentation
 	url = https://github.com/ZiYang-xie/vid2sim-deva-segmentation.git
+
 [submodule "submodules/simple-knn"]
 	path = submodules/simple-knn
 	url = https://gitlab.inria.fr/bkerbl/simple-knn.git
+
+[submodule "submodules/ml-agents"]
+	path = submodules/ml-agents
+	url = https://github.com/Unity-Technologies/ml-agents.git
+	branch = release_21
+
+[submodule "submodules/r3m"]
+	path = submodules/r3m
+	url = https://github.com/facebookresearch/r3m.git

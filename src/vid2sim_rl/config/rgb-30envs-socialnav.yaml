@@ -1,0 +1,115 @@
+# Basic Settings
+log_path: "./logs/"
+version: "rgb-30envs-socialnav"
+resume: False
+pretrained: False
+load_path: 
+
+# Environment Settings
+env:
+  env_paths: [
+   "envs/city-env-dynamic/0000/env.x86_64",
+   "envs/city-env-dynamic/0001/env.x86_64",
+   "envs/city-env-dynamic/0003/env.x86_64",
+   "envs/city-env-dynamic/0004/env.x86_64",
+   "envs/city-env-dynamic/0005/env.x86_64",
+   "envs/city-env-dynamic/0006/env.x86_64",
+   "envs/city-env-dynamic/0008/env.x86_64",
+   "envs/city-env-dynamic/0009/env.x86_64",
+   "envs/city-env-dynamic/0010/env.x86_64",
+   "envs/city-env-dynamic/0014/env.x86_64",
+   "envs/city-env-dynamic/0015/env.x86_64",
+   "envs/city-env-dynamic/0017/env.x86_64",
+   "envs/city-env-dynamic/0019/env.x86_64",
+   "envs/city-env-dynamic/0020/env.x86_64",
+   "envs/city-env-dynamic/0021/env.x86_64",
+   "envs/city-env-dynamic/0022/env.x86_64",
+   "envs/city-env-dynamic/0024/env.x86_64",
+   "envs/city-env-dynamic/0025/env.x86_64",
+   "envs/city-env-dynamic/0026/env.x86_64",
+   "envs/city-env-dynamic/0027/env.x86_64",
+   "envs/city-env-dynamic/0028/env.x86_64",
+   "envs/city-env-dynamic/0030/env.x86_64",
+   "envs/city-env-dynamic/0034/env.x86_64",
+   "envs/city-env-dynamic/0035/env.x86_64",
+   "envs/city-env-dynamic/0036/env.x86_64",
+   "envs/city-env-dynamic/0038/env.x86_64",
+   "envs/city-env-dynamic/0039/env.x86_64",
+   "envs/city-env-dynamic/0042/env.x86_64",
+   "envs/city-env-dynamic/0043/env.x86_64",
+   "envs/city-env-dynamic/0044/env.x86_64",
+  ]
+  test_env_paths: [
+    "" # Test env path goes here
+  ]
+  env_class: 'subproc'
+  seed: 1
+  time_scale: 10.0
+  screen_width: 128
+  screen_height: 72 
+
+  obs_width: 128
+  obs_height: 72
+  
+  max_episode_length: 60
+  time_penalty_multiplier: -0.1
+  distance_reward_multiplier: 1
+  steer_smooth_reward_multiplier: 0.05
+  collision_penalty: -1
+  goal_reward: 10
+  fail_reward: -10
+  random_obj_placement: True
+  max_loaded_obj_num: 1
+  collision_limit: 5
+  enable_dynamic_agent: True
+  dynamic_agent_n: 1
+  
+  use_rgb: True
+  use_depth: False
+
+# Training Settings
+train:
+  type: "sac" # Supported algorithms: ppo, sac
+  verbose: 1
+  total_timesteps: 3000000
+  save_freq: 100000
+  train_freq: 1
+  train_freq_unit: step
+
+  feature_extractor:
+    name: "cnn"
+    base_channel: 16
+    encode_dim: 128
+
+  net_arch:
+    size: 128
+
+  trainer:
+    learning_starts: 10000
+    tau: 0.005
+    gamma: 0.99 
+    buffer_size: 102400
+    sde_sample_freq: 64
+    batch_size: 256
+    learning_rate: 0.0003
+    ent_coef: auto
+    use_sde_at_warmup: True
+    use_sde: True
+
+eval:
+  enabled: True
+  start_at: 500000
+  freq: 50000
+  n_episodes: 5
+  work_id: 2048
+
+inference:
+  num_episodes: 25
+  render: True
+  render_freq: 1
+  max_steps: 9999
+  decision_freq: 1
+  plot_path: "plots/"
+  video_path: "videos/"
+  fps: 5
+

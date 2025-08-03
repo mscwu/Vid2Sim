@@ -28,7 +28,7 @@ if not args.skip_matching:
         --image_path " + args.source_path + "/images \
         --ImageReader.single_camera 1 \
         --ImageReader.camera_model " + args.camera + " \
-        --SiftExtraction.use_gpu " + str(use_gpu)
+        --SiftExtraction.use_gpu " + str(use_gpu) 
     
     if args.mask_path is None:
         args.mask_path = args.source_path + "/masks"
@@ -37,13 +37,14 @@ if not args.skip_matching:
         print(f"Using mask path: {args.mask_path}")
         feat_extracton_cmd += " --ImageReader.mask_path " + args.mask_path
         
+    print(f"Executing: {feat_extracton_cmd}")
     exit_code = os.system(feat_extracton_cmd)
     if exit_code != 0:
         logging.error(f"Feature extraction failed with code {exit_code}. Exiting.")
         exit(exit_code)
 
     ## Feature matching
-    feat_matching_cmd = colmap_command + " exhaustive_matcher \
+    feat_matching_cmd = colmap_command + " sequential_matcher \
         --database_path " + args.source_path + "/distorted/database.db \
         --SiftMatching.use_gpu " + str(use_gpu) + \
         " --SiftMatching.max_num_matches 16384"

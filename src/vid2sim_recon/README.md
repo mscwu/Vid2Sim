@@ -41,7 +41,7 @@ The dynamic masks will be saved in the folder `masks`.
 
 First, install [COLMAP](https://colmap.github.io/) and [GLOMAP](https://github.com/metadriverse/Glomap) for SfM.
 ```bash
-conda install -c conda-forge colmap glomap
+conda install -c conda-forge cudatoolkit colmap glomap
 ```
 
 Then run the following command to run SfM.
@@ -51,4 +51,7 @@ bash run_sfm.sh $seq_path
 The SfM results will be saved in the folder `sparse` under the sequence path.
 
 ### Step3: Generate depth prior for the scene
-
+```bash
+bash generate_depth.sh $seq_path
+```
+The depth results will be saved in the depth folder `depths` under the sequence path.
