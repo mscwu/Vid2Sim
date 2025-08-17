@@ -125,7 +125,7 @@ def process_image(args, cam, pts, pipe, device):
 
     image = Image.open(cam["image_path"])
     result = pipe(image, device=device)
-    pred_dis = result['predicted_depth'].to(device)
+    pred_dis = result['predicted_depth'].to(device).squeeze(0)
     pred_H, pred_W = pred_dis.shape
     if pred_H != H or pred_W != W:
         pred_dis = F.interpolate(pred_dis[None,None,...], (H, W), mode='bilinear', align_corners=False)[0][0]

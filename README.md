@@ -23,7 +23,7 @@ conda create -n vid2sim python=3.10
 conda activate vid2sim
 
 # Install dependencies
-pip install -r requirements.txt
+pip install -e .
 
 # Install reconstruction dependencies
 pip install -e submodules/vid2sim-rasterizer
@@ -32,7 +32,7 @@ pip install -e submodules/simple-knn
 
 # Install RL dependencies
 pip install -r src/vid2sim_rl/requirements.txt
-pip install -e submodules/ml-agents
+pip install -e submodules/ml-agents/ml-agents
 [Optional] pip install -e submodules/r3m
 ```
 

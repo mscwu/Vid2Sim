@@ -54,7 +54,7 @@ if [ ! -z "$RESIZE" ]; then
 fi
 
 # Construct and run the command
-python3 run_sfm.py \
+python3 tools/run_sfm.py \
   --source_path "$SEQ_PATH" \
   --mask_path "$MASK_PATH" \
   --camera "$CAMERA" \

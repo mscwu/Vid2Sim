@@ -44,6 +44,7 @@ dev = [
     "pillow>=8.0.0",
     "imageio==2.37.0",
     "plyfile==0.7.0",
+    "transformers==4.0",
     "tqdm>=4.60.0",
 ]
 all = [
