@@ -92,8 +92,8 @@ class UnityEnvWrapper(gym.Env):
         depth_obs, rgb_obs, vec_obs = observation
         
         # Temp for demo
-        trd_obs = depth_obs.copy()
-        depth_obs = rgb_obs.copy()[:6] 
+        # trd_obs = depth_obs.copy()
+        # depth_obs = rgb_obs.copy()[:6] 
 
         rgb_obs = rgb_obs.reshape(-1, 3, *rgb_obs.shape[1:]) 
         depth_obs = depth_obs.reshape(-1, 1, *depth_obs.shape[1:])
@@ -129,7 +129,7 @@ class UnityEnvWrapper(gym.Env):
             'collision': collision_info,
             'raw_img': raw_img,
             'raw_depth': raw_depth,
-            'trd_view': trd_obs,
+            # 'trd_view': trd_obs,
         }
 
         return {

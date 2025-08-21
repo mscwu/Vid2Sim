@@ -46,6 +46,7 @@ dev = [
     "plyfile==0.7.0",
     "transformers==4.0",
     "tqdm>=4.60.0",
+    "fused_ssim",
 ]
 all = [
     "Vid2Sim[dev]",

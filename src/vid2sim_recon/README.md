@@ -77,8 +77,11 @@ python export_mesh.py -m <RESULT_PATH> --voxel-size <TSDF_VOXEL_SIZE>
 The exported mesh should locate in `mesh` folder under the result path.
 
 ## 4. Build the Simulation Environment 🌏
-Once you have the GS-reconstructed scene and its corresponding mesh, you can build a simulation environment using the hybrid scene representation.
-Refer to [BUILD_YOUR_OWN_ENV.md](../vid2sim_rl/BUILD_YOUR_OWN_ENV.md) for a quick guide on setting up your own real-to-sim environment from scratch.
+Once you have the GS-reconstructed scene and its corresponding mesh both in `.ply` format, you can build a simulation environment using the hybrid scene representation.  
+
+Refer to [BUILD_YOUR_OWN_ENV.md](../vid2sim_rl/BUILD_YOUR_OWN_ENV.md) for a quick guide on setting up your own real-to-sim environment from scratch. Or you could download the provided environments ([Vid2Sim-Envs](https://drive.google.com/drive/folders/1LCruqb6M3mCgsjaqI1ON6WVoZ-9CmQDY?usp=sharing)) and put them in `envs/` folder.
+
+Now you can turn to [Vid2Sim-RL](https://github.com/Vid2Sim/Vid2Sim/tree/main/src/vid2sim_rl) to train the agent in the simulation environment.
 
 ## Citation 📝
 

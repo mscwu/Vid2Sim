@@ -27,8 +27,7 @@ public class CocoAgent : Agent
     public GameObject startRegion;
     public GameObject goalRegion; 
 
-    // private string folderPath = "/home/boleilab/UnityML/UnityGaussianSplatting/projects/Video2Sim/Assets/GLBAssets/sample_obj"; // Folder containing GLB files
-    private string folderPath = "/home/ziyangxie/Code/Video2Sim-RL/envs/mesh/sample_obj"; // Folder containing GLB files
+    private string folderPath = ""; // Your Folder containing GLB files
     public GameObject generateRegion;
     private GameObject parentObject;
 
