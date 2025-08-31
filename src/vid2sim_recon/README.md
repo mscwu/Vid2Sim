@@ -30,6 +30,8 @@ seq_path/
 │   ├── 00002.jpg
 │   ├── ...
 ```
+We provide the [videos][https://drive.google.com/drive/folders/1jGmKxZL6hKvjCg6qhM9wmW1_HjMwCUGa?usp=sharing] of 30 scenes reported in our paper for you to look over.
+
 Then run the following command to generate dynamic masks.
 ```bash
 cd tools/
