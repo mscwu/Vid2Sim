@@ -52,6 +52,10 @@ class CommonUtils:
             if len(all_object_masks) == 0:
                 output_image_path = os.path.join(output_path, raw_image_name)
                 cv2.imwrite(output_image_path, image)
+                # Even when no objects are detected, save a background mask to result_path
+                if result_path:
+                    binary_mask = np.ones_like(mask, dtype=np.uint8) * 255  # All background (white)
+                    cv2.imwrite(os.path.join(result_path, raw_image_name.split(".")[0]+".png"), binary_mask)
                 continue
             # get n masks: (n, h, w)
             all_object_masks = np.concatenate(all_object_masks, axis=0)
