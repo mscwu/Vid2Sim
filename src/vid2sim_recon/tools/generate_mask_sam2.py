@@ -182,6 +182,18 @@ def generate_visualization(video_dir, mask_data_dir, json_data_dir, output_dir, 
     """Draws masks and boxes on frames and saves the final annotated video."""
     print("Generating visualization...")
     CommonUtils.draw_masks_and_box_with_supervision(video_dir, mask_data_dir, json_data_dir, output_dir, result_dir)
+
+    # Check if there are any valid image files in the result directory
+    valid_extensions = [".jpg", ".jpeg", ".JPG", ".JPEG", ".png", ".PNG"]
+    image_files = [f for f in os.listdir(result_dir) 
+                   if os.path.splitext(f)[1] in valid_extensions]
+    
+    if not image_files:
+        print("Warning: No mask objects were detected in the video frames.")
+        print("No result images were generated. Skipping video creation.")
+        print(f"Annotated frames are available in: {output_dir}")
+        return
+
     create_video_from_images(result_dir, output_video_path, frame_rate=frame_rate)
     print(f"Output video saved to: {output_video_path}")
 
